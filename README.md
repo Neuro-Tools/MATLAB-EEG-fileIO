@@ -4,11 +4,15 @@ The files in this repository are for ERP data from Brain Vision Analyzer into MA
 
 You will need to have EEGLAB, the dependentFunctions subfolder, and the bva-io subfolder in your path. 
 
-1. To load in raw BV data simply type: 
+1. To load in raw BV data using a popup to select a file simply type: 
 
-loadBVData
+EEG = loadBVData();
 
-This will prompt you to select a file and it will load that file into EEGLAB format and will use another EEGLAB function to add channel names.
+or
+
+EEG = loadBVData('fileName.vhdr');
+
+To load in raw data from a script.
 
 2. To load averaged ERP data from BV Analyzer:
 
