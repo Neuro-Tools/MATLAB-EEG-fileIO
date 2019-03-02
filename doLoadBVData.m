@@ -16,11 +16,15 @@ function EEG = doLoadBVData(varargin)
     else
         
         filename = varargin{1};
-        pathname = pwd;
+        pathname = which(filename);
+        pathname = erase(pathname,filename);
+        cd(pathname);
         
     end
 
     [EEG, com] = pop_loadbv(pathname, filename);
     EEG = pop_chanedit(EEG,'lookup','Standard-10-20-Cap81.ced');
+    EEG.pathname = pathname;
+    EEG.filename = filename;
     
 end
